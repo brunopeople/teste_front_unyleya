@@ -1,13 +1,13 @@
 <template>
-    <DetailResourceBase :endpoint="$router.currentRoute.params.endpoint" />
+  <DetailResouceBase :endpoint="$router.currentRoute.params.endpoint" />
 </template>
 
 <script>
-    import DetailResourceBase from "./DetailResourceBase";
-    export default {
-        name: "DetailBase",
-        components: {DetailResourceBase}
-    };
+import DetailResouceBase from "./DetailResouceBase";
+export default {
+  name: "DetailBase",
+  components: { DetailResouceBase }
+};
 </script>
 
 <style lang="scss" scoped></style>

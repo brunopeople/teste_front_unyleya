@@ -1,23 +1,24 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+  <v-app>
+    <NavigationDrawer ref="drawer" />
+    <Header @toggle-drawer="$refs.drawer.drawer = !$refs.drawer.drawer" />
+    <v-content>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
-</script>
+import Header from "./components/shared/Header";
+import NavigationDrawer from "./components/shared/NavigationDrawer";
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+export default {
+  name: "App",
+  components: {
+    Header,
+    NavigationDrawer
+  }
+};
+</script>
